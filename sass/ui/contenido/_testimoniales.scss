@@ -1,0 +1,100 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.testimoniales-blog{
+    margin-top: 50px;
+    @include m.gridFr(1fr,2fr,20px);
+    @include m.telefono{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.testimoniales-blog__testimoniales{
+    .testimoniales-blog__heading{
+        font-weight: 500;
+
+        span{
+            display: block;
+            font-weight: bold;
+        }
+    }
+}
+.testimonial{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: v.$blanco;
+    width: 400px;
+    margin-top: 100px;
+    padding: 20px;
+    @include m.telefono{
+        width: 100%;
+    }
+
+    .testimonial__imagen{
+        width: 200px;
+        margin-top: -100px;
+    }
+    .testimonial__contenido{
+        .testimonial__nombre{
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .testimonial__texto{
+            text-align: center;
+        }
+    }
+}
+.testimoniales-blog__blog{
+    .testimoniales-blog__heading{
+       font-weight: 500;
+
+        span{
+            display: block;
+            font-weight: bold;
+        }
+    }
+
+    .entrada{
+        @include m.grid(2,0);
+        margin-bottom: 20px;
+        background-color: v.$blanco;
+        @include m.telefono{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .entrada__imagen-contenedor{
+            .entrada__imagen{
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.entrada__contenido{
+    padding: 20px ;
+
+    .entrada__nombre{
+        margin-bottom: 20px;
+    }
+    .entrada__meta,
+    .entrada__texto{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .entrada__enlace{
+        display: block;
+        text-align: center;
+        width: 200px;
+        @include m.boton(v.$primario,v.$blanco);
+        padding: 15px;
+        font-weight: bold;
+        @include m.telefono{
+            width: 100%;
+        }
+    }
+}
